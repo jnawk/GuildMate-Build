@@ -11,9 +11,9 @@ RUN apt-get update && \
         postgresql sudo \
         vim
 
-RUN mkdir /guild
-WORKDIR guild
-RUN python3.7 -m venv venv && \
+RUN mkdir /guild && \
+    cd /guild && \
+    python3.7 -m venv venv && \
     . venv/bin/activate && \
     pip install --upgrade pip wheel && \
     pip install black discord discord.py Flask Flask-API Flask-Discord pytest \
