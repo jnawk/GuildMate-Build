@@ -9,14 +9,14 @@ RUN apt-get update && \
         nodejs npm \
         git \
         postgresql sudo \
-        vim
-
-RUN mkdir /guild && \
+        vim && \
+    mkdir /guild && \
     cd /guild && \
     python3.7 -m venv venv && \
     . venv/bin/activate && \
     pip install --upgrade pip wheel && \
     pip install black discord discord.py Flask Flask-API Flask-Discord pytest \
       pytest-asyncio python-dotenv PyYAML SQLAlchemy websockets && \
+    npm install -g npm && \
     npm install eslint@~6 react webpack && \
     echo . /guild/venv/bin/activate >> ~/.bashrc
